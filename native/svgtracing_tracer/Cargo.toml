@@ -1,0 +1,15 @@
+[package]
+name = "svgtracing_tracer"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "svgtracing_tracer"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+rustler = "0.29.1"
+vtracer = "0.5.0"
+visioncortex = "0.8.0"
