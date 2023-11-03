@@ -1,24 +1,34 @@
 defmodule SvgTracing do
+  alias Toml.Lexer.String
   alias SvgTracing.Tracer
 
-  defstruct [
-    input_path: "",
-    output_path: "",
-    colormode: "color",
-    hierarchical: "stacked",
-    mode: "spline",
-    filter_speckle: 4,
-    color_precision: 6,
-    layer_difference: 16,
-    corner_threshold: 60,
-    length_threshold: 4.0,
-    max_iterations: 10,
-    splice_threshold: 45,
-    path_precision: 8
-  ]
+  @moduledoc ~S"""
+  An open source software to convert raster images (like jpg & png) into vector graphics (svg).
+  It can vectorize graphics and photographs and trace the curves to output compact vector files.
+  This is backed by rust (vtracer) using rustler.
 
-  defdelegate add(a, b), to: Tracer, as: :add
+  iex> SvgTracing.trace("priv/static/ikea-sofa.png", "priv/static/ikea-sofa.svg")
+  {:ok, {}}
+  """
+  defstruct input_path: "",
+            output_path: "",
+            colormode: "color",
+            hierarchical: "stacked",
+            mode: "spline",
+            filter_speckle: 4,
+            color_precision: 6,
+            layer_difference: 16,
+            corner_threshold: 60,
+            length_threshold: 4.0,
+            max_iterations: 10,
+            splice_threshold: 45,
+            path_precision: 8
 
+  @doc """
+  Convert images to vector graphics, this will need two paths, input image path
+  and second output image path to save svg.
+  """
+  @spec trace(String.t(), String.t()) :: {:ok, {}} | {:error, String.t()}
   def trace(input_path, output_path) do
     default_values = %SvgTracing{}
 
@@ -36,6 +46,6 @@ defmodule SvgTracing do
       default_values.max_iterations,
       default_values.splice_threshold,
       default_values.path_precision
-      )
+    )
   end
 end
