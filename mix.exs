@@ -7,7 +7,7 @@ defmodule SvgTracing.MixProject do
       app: :svg_tracing,
       name: "svg_tracing",
       description: "Elixir Vector Graphics Converter",
-      version: "0.1.0",
+      version: "0.1.2",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -35,7 +35,8 @@ defmodule SvgTracing.MixProject do
       maintainers: ["Hassan Raza"],
       licenses: ["MIT"],
       links: %{GitHub: @source_url},
-      files: ~w(lib .formatter.exs mix.exs README.md LICENSE CHANGELOG.md)
+      canonical: "https://hexdocs.pm/svg_tracing",
+      files: ~w(lib native .formatter.exs mix.exs README.md LICENSE CHANGELOG.md)
     ]
   end
 end
