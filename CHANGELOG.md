@@ -1,4 +1,7 @@
 
+## 0.1.3 (2023-11-03)
+- Add missing prive folder
+
 ## 0.1.2 (2023-11-03)
 - Add missing native rust folder
 

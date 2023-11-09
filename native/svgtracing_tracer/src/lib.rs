@@ -2,11 +2,6 @@ use visioncortex::PathSimplifyMode;
 use vtracer::{Config, convert_image_to_svg, ColorMode, Hierarchical};
 use std::path::PathBuf;
 
-#[rustler::nif]
-fn add(a: i64, b: i64) -> i64 {
-    a + b
-}
-
 #[rustler::nif(schedule = "DirtyCpu")]
 fn convert_to_svg(
   image_path: &str,
@@ -76,4 +71,4 @@ fn convert_to_svg(
   Ok(())
 }
 
-rustler::init!("Elixir.SvgTracing.Tracer", [add, convert_to_svg]);
+rustler::init!("Elixir.SvgTracing.Tracer", [convert_to_svg]);
