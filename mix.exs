@@ -7,7 +7,7 @@ defmodule SvgTracing.MixProject do
       app: :svg_tracing,
       name: "svg_tracing",
       description: "Elixir Vector Graphics Converter",
-      version: "0.1.3",
+      version: "0.1.4",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps(),

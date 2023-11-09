@@ -13,7 +13,7 @@ by adding `svg_tracing` to your list of dependencies in `mix.exs`:
 you need install rust 
 def deps do
   [
-    {:svg_tracing, "~> 0.1.0"}
+    {:svg_tracing, "~> 0.1.4"}
   ]
 end
 
