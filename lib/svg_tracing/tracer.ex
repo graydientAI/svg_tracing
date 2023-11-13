@@ -1,4 +1,7 @@
 defmodule SvgTracing.Tracer do
+  @moduledoc false
+
+  @doc false
   use Rustler, otp_app: :svg_tracing, crate: "svgtracing_tracer"
   def convert_to_svg(_a, _b, _, _, _, _, _, _, _, _, _, _, _), do: {:error, error()}
 

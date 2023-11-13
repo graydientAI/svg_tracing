@@ -27,6 +27,9 @@ defmodule SvgTracing do
   @doc """
   Convert images to vector graphics, this will need two paths, input image path
   and second output image path to save svg.
+  
+  iex(1)> SvgTracing.trace("priv/static/ikea-sofa.png", "priv/static/ikea-sofa.svg")
+  {:ok, {}}
   """
   @spec trace(String.t(), String.t()) :: {:ok, {}} | {:error, String.t()}
   def trace(input_path, output_path) do

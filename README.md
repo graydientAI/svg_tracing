@@ -19,6 +19,13 @@ end
 
 iex(1)> SvgTracing.trace("priv/static/ikea-sofa.png", "priv/static/ikea-sofa.svg")
 {:ok, {}}
+
+#### Input Image:
+![input_image](/priv/static/ikea-sofa.png)
+
+#### Output SVG:
+![input_image](/priv/static/ikea-sofa.svg)
+
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
