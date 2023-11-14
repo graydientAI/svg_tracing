@@ -6,8 +6,7 @@ This is backed by rust (vtracer) using rustler. You need to install [rust](https
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `svg_tracing` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `svg_tracing` to your list of dependencies in `mix.exs`:
 
 ```elixir
 you need install rust 
@@ -19,16 +18,26 @@ end
 
 iex(1)> SvgTracing.trace("priv/static/ikea-sofa.png", "priv/static/ikea-sofa.svg")
 {:ok, {}}
-
-#### Input Image:
-![input_image](/priv/static/ikea-sofa.png)
-
-#### Output SVG:
-![input_image](/priv/static/ikea-sofa.svg)
-
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/svg_tracing>.
+### Examples
 
+#### Input Image:
+![input_image](/priv/static/example1.png)
+
+#### Output SVG:
+![input_image](/priv/static/example1.svg)
+
+
+#### Input Image:
+![input_image](/priv/static/example2.jpg)
+
+#### Output SVG:
+![input_image](/priv/static/example2.svg)
+
+
+#### Input Image:
+![input_image](/priv/static/example3.jpg)
+
+#### Output SVG:
+![input_image](/priv/static/example3.svg)
