@@ -4,6 +4,13 @@
 An open source software to convert raster images (like jpg & png) into vector graphics (svg). It can vectorize graphics and photographs and trace the curves to output compact vector files.
 This is backed by rust (vtracer) using rustler. You need to install [rust](https://www.rust-lang.org/tools/install) first.
 
+## Binaries
+| Binaries | Status |
+| :---:   | :---: |
+| [MasOS (M2)](burrito_out/svg_tracing_macos_m1) | Tested ✅  |
+| [MacOS (Intel)](burrito_out/svg_tracing_macos) | Untested  ❌ |
+| [Linux](burrito_out/svg_tracing_linux) | UnTested   ❌|
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed

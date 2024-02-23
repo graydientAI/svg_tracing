@@ -1,6 +1,13 @@
 defmodule SvgTracing do
-  alias Toml.Lexer.String
   alias SvgTracing.Tracer
+
+  def start(_, _args) do
+    [a, b] = Burrito.Util.Args.get_arguments()
+    IO.puts("Preparing from heart 💙")
+    trace(a, b)
+    IO.puts("Hurry, Ready at #{b}")
+    System.halt(0)
+  end
 
   @moduledoc ~S"""
   An open source software to convert raster images (like jpg & png) into vector graphics (svg).
@@ -38,6 +45,27 @@ defmodule SvgTracing do
     Tracer.convert_to_svg(
       input_path,
       output_path,
+      "color",
+      default_values.hierarchical,
+      default_values.mode,
+      default_values.filter_speckle,
+      default_values.color_precision,
+      default_values.layer_difference,
+      default_values.corner_threshold,
+      default_values.length_threshold,
+      default_values.max_iterations,
+      default_values.splice_threshold,
+      default_values.path_precision
+    )
+  end
+
+  # @spec trace(Binary) :: {:ok, {}} | {:error, String.t()}
+  def trace(binary) do
+    default_values = %SvgTracing{}
+
+    Tracer.convert_to_svg(
+      binary,
+      "",
       default_values.colormode,
       default_values.hierarchical,
       default_values.mode,

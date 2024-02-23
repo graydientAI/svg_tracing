@@ -13,3 +13,8 @@ crate-type = ["cdylib"]
 rustler = "0.29.1"
 vtracer = "0.5.0"
 visioncortex = "0.8.0"
+
+[build.env]
+passthrough = [
+  "RUST_BACKTRACE=1"
+]
