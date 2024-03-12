@@ -5,13 +5,15 @@ defmodule SvgTracing.CopyNIF do
   @impl Step
   def execute(%Burrito.Builder.Context{} = context) do
     dir =
-    Path.join(context.work_dir, [
-      "lib",
-      "/svg_tracing-#{context.mix_release.version}",
-      "/priv",
-      "/native"
-    ])
+      Path.join(context.work_dir, [
+        "lib",
+        "/svg_tracing-#{context.mix_release.version}",
+        "/priv",
+        "/native"
+      ])
+
     File.mkdir_p!(dir)
+
     case context.target.alias do
       :macos_m1 ->
         File.copy!(
@@ -30,6 +32,7 @@ defmodule SvgTracing.CopyNIF do
           "priv/native/libsvgtracing_tracer.so",
           Path.join(dir, "libsvgtracing_tracer.so")
         )
+
       alias ->
         raise "unknown target alias #{inspect(alias)}"
     end

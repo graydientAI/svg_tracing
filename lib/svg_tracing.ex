@@ -27,17 +27,22 @@ defmodule SvgTracing do
             path_precision: 8
 
   def start(_ab, _args) do
-    [input, output] = Burrito.Util.Args.get_arguments()
-    |> get_params()
-    |> preparing_log()
+    [input, output] =
+      Burrito.Util.Args.get_arguments()
+      |> get_params()
+      |> preparing_log()
 
     trace(input, output)
 
     System.halt(0)
   end
 
-  defp get_params([]), do: IO.puts("Oh no, Missing input image"); [nil, nil]
-  defp get_params([input | []]), do: [input, "#{@output_file_prefix}#{:rand.uniform(@output_file_random_number)}.svg"]
+  defp get_params([]), do: IO.puts("Oh no, Missing input image")
+  [nil, nil]
+
+  defp get_params([input | []]),
+    do: [input, "#{@output_file_prefix}#{:rand.uniform(@output_file_random_number)}.svg"]
+
   defp get_params([input, output | _]), do: [input, output]
 
   defp preparing_log(input) do
@@ -54,7 +59,9 @@ defmodule SvgTracing do
   """
   @spec trace(String.t(), String.t()) :: {:ok, {}} | {:error, String.t()}
   def trace(nil, nil), do: {:error, "Missing Required Argument"}
-  def trace(input), do: trace(input, "#{@output_file_prefix}#{:rand.uniform(@output_file_random_number)}.svg")
+
+  def trace(input),
+    do: trace(input, "#{@output_file_prefix}#{:rand.uniform(@output_file_random_number)}.svg")
 
   @spec trace(String.t(), String.t()) :: {:ok, {}} | {:error, String.t()}
   def trace(input_path, output_path) do
