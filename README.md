@@ -8,9 +8,11 @@ This is backed by rust (vtracer) using rustler. You need to install [rust](https
 | Binaries | Status |
 | :---:   | :---: |
 | [MasOS (M2)](burrito_out/svg_tracing_macos_m1) | Tested ✅  |
-| [MacOS (Intel)](burrito_out/svg_tracing_macos) | Untested  ❌ |
-| [Linux](burrito_out/svg_tracing_linux) | UnTested   ❌|
 
+### Usage
+```
+./svg_tracing_macos_m1 input.png output.svg
+```
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed

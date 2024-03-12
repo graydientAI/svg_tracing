@@ -20,7 +20,7 @@ defmodule SvgTracing.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {SvgTracing, []}
+      # mod: {SvgTracing, []}  # enable only when compiling binaries
     ]
   end
 
@@ -50,8 +50,8 @@ defmodule SvgTracing.MixProject do
         burrito: [
           targets: [
             macos_m1: [os: :darwin, cpu: :aarch64],
-            macos: [os: :darwin, cpu: :x86_64],
-            linux: [os: :linux, cpu: :x86_64],
+            # macos: [os: :darwin, cpu: :x86_64],
+            # linux: [os: :linux, cpu: :x86_64],
             # windows: [os: :windows, cpu: :x86_64]
           ],
           extra_steps: [
