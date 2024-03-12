@@ -19,8 +19,8 @@ defmodule SvgTracing.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
-      mod: {SvgTracing, []}
+      extra_applications: [:logger]
+      # mod: {SvgTracing, []}  # enable only when compiling binaries
     ]
   end
 
@@ -49,9 +49,9 @@ defmodule SvgTracing.MixProject do
         steps: [:assemble, &Burrito.wrap/1],
         burrito: [
           targets: [
-            macos_m1: [os: :darwin, cpu: :aarch64],
-            macos: [os: :darwin, cpu: :x86_64],
-            linux: [os: :linux, cpu: :x86_64],
+            macos_m1: [os: :darwin, cpu: :aarch64]
+            # macos: [os: :darwin, cpu: :x86_64],
+            # linux: [os: :linux, cpu: :x86_64],
             # windows: [os: :windows, cpu: :x86_64]
           ],
           extra_steps: [
@@ -61,7 +61,7 @@ defmodule SvgTracing.MixProject do
             ]
           ],
           no_clean: false,
-          debug: Mix.env() != :prod,
+          debug: Mix.env() != :prod
         ]
       ]
     ]
